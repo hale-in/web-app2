@@ -1,9 +1,9 @@
 from django.urls import path
 
-from accountapp.views import write_correct
+from accountapp.views import nd_project
 
 app_name = 'accountapp'
 
 urlpatterns =[
-    path('2nd_project', write_correct, name='2nd_project')
+    path('nd_project', nd_project, name='nd_project')
 ]
