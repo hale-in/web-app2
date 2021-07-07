@@ -2,8 +2,27 @@
 
 {% block content %}
 
+    <style>
+        .testing{
+            background-color: aliceblue;
+            margin: 2rem;
+            height: 100px;
+            width: 100px;
+            border-radius: 1rem;
+        }
+
+
+    </style>
+
     <div style="height: 10rem; background-color: aqua; margin: 2rem; border-radius: 1rem;">
         <h1> Hello World </h1>
     </div>
+
+    <div class="testing" style="display: block">block</div>
+    <div class="testing" style="display: inline">inline</div>
+    <div class="testing" style="display: none">none</div>
+    <div class="testing" style="display: inline">inline</div>
+    <div class="testing" style="display: inline-block">inline-block</div>
+    <div class="testing"></div>
 
 {% endblock %}
