@@ -1,0 +1,15 @@
+.style_header_logo{
+     margin: 2rem 0; font-family: 'Acme', sans-serif;
+}
+
+.style_header_buttom{
+     margin-bottom: 1.5rem
+}
+
+.style_footer_logo{
+     margin: 1.5rem 0; font-family: 'Acme', sans-serif;
+}
+
+.style_footer_buttom{
+     margin-top: 1.5rem
+}
