@@ -5,7 +5,11 @@
         </h1>
     </div>
     <div class="style_header_button">
-        <span>click1</span>
+        <span>
+            <a href="{% url 'articleapp:list' %}">
+                Articles
+            </a>
+        </span>
         <span>click2</span>
         {% if not user.is_authenticated %}
         <span>
