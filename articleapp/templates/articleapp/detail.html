@@ -51,7 +51,16 @@
                                 <p>
                                     {{ comment.content }}
                                 </p>
-
+                            </div>
+                            <div>
+                                {% if comment.writer == user %}
+                                <div style="text-align: right">
+                                    <a href="{% url 'commentapp:delete' pk=comment.pk %}"
+                                    class="btn btn-danger rounded-pill pk-t">
+                                        X
+                                    </a>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
