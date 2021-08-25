@@ -9,7 +9,7 @@
 
 {% for message in messages %}
     <div class="text-center">
-        <div class="btn btn-outline-info round-pill px-3">
+        <div class="btn btn-outline-{{ message.tags }} round-pill px-3">
             {{ message }}
         </div>
     </div>
