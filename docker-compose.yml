@@ -15,7 +15,7 @@ services:
       - taketae_media:/data/media/
 
   django:
-    image: taketae_django:4
+    image: taketae_django:5
     networks:
       - taketae_network
     volumes:
