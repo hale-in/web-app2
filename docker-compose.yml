@@ -21,6 +21,8 @@ services:
     volumes:
       - taketae_static:/home/web-app2/staticfiles
       - taketae_media:/home/web-app2/media
+    secrets:
+      - django_secret_key
 
   mariadb:
     image: mariadb:10.5
@@ -41,3 +43,7 @@ volumes:
   taketae_static:
   taketae_media:
   taketae_maria:
+
+secrets:
+  django_secret_key:
+    external: true
