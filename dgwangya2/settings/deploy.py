@@ -1,22 +1,13 @@
 from .base import *
 
+def read_secret(secret_name):
+    file = open('/run/secrets/' + secret_name)
+    secret = file.read()
+    secret = secret.lstrip().rstrip()
+    file.close()
+    return secret
 
-
-env_list = dict()
-
-local_env = open(os.path.join(BASE_DIR, '.env'))
-
-while True:
-    line = local_env.readline()
-    if not line:
-        break
-    line = line.replace('\n', '')
-    start = line.find('=')
-    key = line[:start]
-    value = line[start+1:]
-    env_list[key] = value
-
-SECRET_KEY = env_list['SECRET_KEY']
+SECRET_KEY = read_secret('django_secret_key')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -38,8 +29,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': 'qlalfqjsgh@',
+        'USER': read_secret('MARIADB_USER'),
+        'PASSWORD': read_secret('MARIADB_PASSWORD'),
         'HOST': 'mariadb',
         'PORT': '3306',
     }
