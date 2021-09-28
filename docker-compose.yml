@@ -23,6 +23,8 @@ services:
       - taketae_media:/home/web-app2/media
     secrets:
       - django_secret_key
+      - MARIADB_USER
+      - MARIADB_PASSWORD
 
   mariadb:
     image: mariadb:10.5
@@ -30,6 +32,10 @@ services:
       - taketae_network
     volumes:
       - taketae_maria:/var/lib/mysql
+    secrets:
+      - MARIADB_ROOT_PASSWORD
+      - MARIADB_USER
+      - MARIADB_PASSWORD
     environment:
       MARIADB_ROOT_PASSWORD: qlalfqjsgh@
       MARIADB_DATABASE: django
@@ -46,4 +52,10 @@ volumes:
 
 secrets:
   django_secret_key:
+    external: true
+  MARIADB_ROOT_PASSWORD:
+    external: true
+  MARIADB_USER:
+    external: true
+  MARIADB_PASSWORD:
     external: true
